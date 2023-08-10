@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .thumbnail {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .thumbnail img:hover {
+            transform: scale(1.1);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        :target {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery">
+        <a href="#lightbox1" class="thumbnail">
+            <img src="https://wallpaper.dog/large/10716264.jpg"
+                alt="Image 1">
+        </a>
+        <a href="#lightbox2" class="thumbnail">
+            <img src="https://www.iplt20.com/assets/images/stadiumimage/Wankhede-Stadium-new.jpg"
+                alt="Image 2">
+        </a>
+        <!-- Add more thumbnail <a> elements with images as needed -->
+    </div>
+    <div class="lightbox" id="lightbox1">
+        <a href="#" class="lightbox-close">Close</a>
+        <img src="https://wallpaper.dog/large/10716264.jpg"
+            alt="Full-sized Image 1">
+    </div>
+    <div class="lightbox" id="lightbox2">
+        <a href="#" class="lightbox-close">Close</a>
+        <img src="https://www.iplt20.com/assets/images/stadiumimage/Wankhede-Stadium-new.jpg"
+            alt="Full-sized Image 2">
+    </div>
+    <!-- Add more lightbox <div> elements with images as needed -->
+</body>
+
+</html>
